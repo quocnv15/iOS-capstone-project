@@ -18,7 +18,7 @@ struct Header: View {
                         if isLoggedIn {
                             // hidden back navigation button
 
-                            NavigationLink(destination: UserProfile()) {
+                            NavigationLink(destination: UserProfile(isTabView: false)) {
                                 Image("Profile")
                                     .resizable()
                                     .aspectRatio( contentMode: .fit)

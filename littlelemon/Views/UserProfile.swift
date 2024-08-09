@@ -6,6 +6,7 @@
 import SwiftUI
 
 struct UserProfile: View {
+    var isTabView: Bool
     @StateObject private var viewModel = ViewModel()
 
     @Environment(\.presentationMode) var presentation
@@ -25,7 +26,7 @@ struct UserProfile: View {
     var body: some View {
         NavigationStack {
             VStack {
-                HeaderProfile()
+                if !isTabView { HeaderProfile() }
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 5) {
                         HStack{
@@ -178,6 +179,6 @@ struct UserProfile: View {
 
 struct UserProfile_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfile()
+        UserProfile(isTabView: false)
     }
 }
